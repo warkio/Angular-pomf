@@ -20,7 +20,7 @@ export class UploadService {
 
   public upload(
     files: PomfObject[], startingPoint: number
-  ): { [key: string]: { progress: Observable<number> } } {
+  ) {
     // this will be the our resulting map
     for (let i = startingPoint; i < files.length; i++) {
       const { file } = files[i];
