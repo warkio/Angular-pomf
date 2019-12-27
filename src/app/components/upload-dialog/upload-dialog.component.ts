@@ -12,7 +12,6 @@ export class UploadDialogComponent implements OnInit {
 
   constructor(private uploadService: UploadService) { }
 
-  progress = [];
   uploading = false;
   lastIndex = 0;
 
@@ -28,6 +27,7 @@ export class UploadDialogComponent implements OnInit {
       }
     }
   }
+
   addFiles() {
     this.file.nativeElement.click();
   }

@@ -22,7 +22,6 @@ export class UploadService {
     files: PomfObject[], startingPoint: number
   ): { [key: string]: { progress: Observable<number> } } {
     // this will be the our resulting map
-    const status: { [key: string]: { progress: Observable<number> } } = {};
     for (let i = startingPoint; i < files.length; i++) {
       const { file } = files[i];
       // create a new multipart-form for every file
@@ -76,7 +75,5 @@ export class UploadService {
       // Save every progress-observable in a map of all observables
       files[i].progress = progress.asObservable();
     }
-    // return the map of progress.observables
-    return status;
   }
 }
