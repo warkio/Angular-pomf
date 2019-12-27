@@ -1,0 +1,16 @@
+<input
+    type="file"
+    #file
+    style="display: none"
+    (change)="onFilesAdded()"
+    multiple
+/>
+<mat-card id="upload-card">
+    <mat-card-header class="card-header">
+        <button mat-button (click)="addFiles()" [disabled]="this.uploading">Select files</button>
+        <button mat-button (click)="closeDialog()" [disabled]="this.uploading">Upload</button>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+        <app-upload-list [files]="this.files"></app-upload-list>
+    </mat-card-content>
+</mat-card>

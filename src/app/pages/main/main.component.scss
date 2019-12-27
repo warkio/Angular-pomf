@@ -1,0 +1,13 @@
+#page-title {
+    margin-top: 0;
+    vertical-align: middle;
+    line-height: 500px;
+}
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.section.dark-bg {
+    min-height: 500px;
+}

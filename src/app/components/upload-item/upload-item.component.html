@@ -1,0 +1,26 @@
+<mat-list-item >
+    <h4 mat-line>{{file.file.name}}</h4>
+    <mat-progress-bar
+        [ngClass]="{'error': file.response && !(file.response.success)}"
+        *ngIf="file.progress"
+        mode="determinate"
+        [value]="file.progress | async"
+    ></mat-progress-bar>
+    <mat-progress-bar
+        [ngClass]="{'error': file.response && !(file.response.success)}"
+        *ngIf="!file.progress || file.progress == 0"
+        mode="determinate"
+        [value]="0"
+    ></mat-progress-bar>
+    <div class="buttons-section">
+        <button mat-icon-button color="#303030" (click)="openInfoDialog()" *ngIf="!file.response" disabled>
+            <mat-icon>info</mat-icon>
+        </button>
+        <button mat-icon-button color="#303030" (click)="openInfoDialog()" *ngIf="file.response">
+                <mat-icon>info</mat-icon>
+            </button>
+        <button mat-icon-button color="#303030" (click)="this.clickedDelete.emit();">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </div>
+</mat-list-item>

@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Image info</h1>
+<div mat-dialog-content>
+    <mat-list>
+        <mat-list-item>
+            Success: {{data.resp.success}}
+        </mat-list-item>
+        <!-- Error section-->
+        <mat-list-item *ngIf="!data.resp.success">
+            Errorcode: {{data.resp.errorcode}}
+        </mat-list-item>
+        <mat-list-item *ngIf="!data.resp.success">
+            Description: {{data.resp.description}}
+        </mat-list-item>
+
+        <!-- Image info -->
+        <mat-list-item *ngIf="data.resp.success">
+            Original name: {{data.resp.files[0].originalName}}
+        </mat-list-item>
+        <mat-list-item *ngIf="data.resp.success">
+            Name: {{data.resp.files[0].name}}
+        </mat-list-item>
+        <mat-list-item *ngIf="data.resp.success">
+            <a href="{{data.resp.files[0].url}}">Url</a>
+        </mat-list-item>
+    </mat-list>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+</div>

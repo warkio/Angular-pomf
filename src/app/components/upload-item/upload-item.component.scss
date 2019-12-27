@@ -1,0 +1,31 @@
+/** Content **/
+::ng-deep .mat-list-item-content {
+    padding: 0!important;
+}
+::ng-deep .mat-list-text {
+    width: 10% !important;
+}
+.buttons-section {
+    width: 60px;
+    margin-left: 10px;
+    align-items: end;
+}
+::ng-deep .mat-icon-button {
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 20px !important;
+    .mat-icon {
+      font-size: 20px !important;
+      width: 20px !important;
+      height: 20px !important;
+      line-height: 20px !important;
+    }
+}
+
+::ng-deep mat-progress-bar.error .mat-progress-bar-element{
+    background-color: red !important;
+    fill: red !important;
+}
+::ng-deep mat-progress-bar.error .mat-progress-bar-fill::after {
+    background-color: red !important;
+}

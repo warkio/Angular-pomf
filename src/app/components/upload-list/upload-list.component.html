@@ -1,0 +1,3 @@
+<mat-list>
+    <app-upload-item *ngFor="let file of files;let i = index" [file]="file" (clickedDelete)="deleteItem(i)"></app-upload-item>
+</mat-list>
